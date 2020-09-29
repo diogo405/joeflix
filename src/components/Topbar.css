@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.topbar {
+	padding: 20px 40px;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+}
+.topbar__cont {
+	display: flex;
+	align-items: center;
+}
+.topbar__item {
+	margin-right: 20px;
+}
+.topbar__item--active {
+	font-weight: bold;
+}
+.topbar__item--menu {
+    display: none;
+}
+.topbar__item--menu:after {
+	border: solid white;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    content: '';
+    margin-left: 6px;
+    top: -1px;
+    position: relative;
+}
+.topbar__item--logo {
+	font-family: 'Bebas Neue', cursive;
+	color: var(--red);
+	font-size: 26px;
+	margin-right: 40px;
+}
+.topbar__icon {
+	filter: invert(1);
+    height: 15px;
+}
+.topbar__acc {
+	background-color: var(--red);
+	width: 30px;
+	height: 30px;
+	position: relative;
+	border-radius: 2px;
+}
+.topbar__face {
+	background-color: white;
+    content: '';
+    box-shadow: 2px 0 0 0 white;
+    position: absolute;
+}
+.topbar__face-leye {
+	height: 3px;
+    width: 2px;
+    top: 7px;
+    left: 7px;
+}
+.topbar__face-reye {
+	height: 3px;
+    width: 2px;
+    top: 7px;
+    right: 7px;
+}
+.topbar__face-mouth {
+	height: 3px;
+    width: 8px;
+    top: 17px;
+    left: 13px;
+}
+
+@media (max-width: 768px) {
+	.topbar__item--menu {
+		display: block;
+	}
+	.topbar__cont:first-child .topbar__item:not(.topbar__item--menu):not(.topbar__item--logo) {
+		display: none;
+	}
+}
