@@ -1,1 +1,7 @@
 .home {}
+.home__list {
+	padding: 20px;
+}
+.home__list--grey {
+	background-color: #111;
+}

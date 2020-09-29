@@ -1,11 +1,27 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './Topbar.css'
 
 function Topbar() {
+    const [scroll, setScroll] = useState(false)
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+    }, [])
+    
+    useEffect(() => {
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
+    const handleScroll = () => {
+        setScroll(window.scrollY > 0)
+    }
+
     return (
-        <nav className="topbar">
+        <nav className={`topbar ${scroll ? 'topbar--scroll' : ''}`}>
         	<ul className="topbar__cont">
-        		<li className="topbar__item topbar__item--logo">JOEFLIX</li>
+        		<li className="topbar__item topbar__item--logo"><h1>JOEFLIX</h1></li>
         		<li className="topbar__item topbar__item--menu">
         			Browse
         		</li>

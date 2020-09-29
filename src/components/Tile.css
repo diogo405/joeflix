@@ -1,0 +1,10 @@
+.tile {
+	background-position: center center;
+	border-radius: 7px;
+	margin-right: 10px;
+	width: calc(20% - 10px);
+	height: 200px;
+}
+.tile:last-child {
+	margin-right: 0;
+}

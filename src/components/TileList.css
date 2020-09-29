@@ -1,0 +1,12 @@
+.tlist {
+	padding: 0 10px;
+}
+.tlist__cont {
+	display: flex;
+}
+.tlist__title {
+	font-size: 12px;
+    margin-bottom: 7px;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+}

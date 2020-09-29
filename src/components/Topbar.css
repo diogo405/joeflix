@@ -2,13 +2,17 @@
 
 .topbar {
 	padding: 20px 40px;
-    background-color: rgba(0,0,0,0.7);
+    background: linear-gradient(to bottom,rgba(0,0,0,.7) 90%,rgba(0,0,0,0));
     display: flex;
     justify-content: space-between;
     font-size: 14px;
     position: fixed;
     width: 100%;
     box-sizing: border-box;
+    z-index: 1;
+}
+.topbar--scroll {
+    background: linear-gradient(to bottom,rgba(0,0,0,1) 100%,rgba(0,0,0,0));
 }
 .topbar__cont {
 	display: flex;
@@ -39,6 +43,8 @@
 	color: var(--red);
 	font-size: 26px;
 	margin-right: 40px;
+    text-shadow: 2px 2px black;
+    letter-spacing: 4px;
 }
 .topbar__icon {
 	filter: invert(1);
