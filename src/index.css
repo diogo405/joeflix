@@ -3,3 +3,9 @@ body {
 	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 	background-color: black;
 }
+
+@keyframes loading {
+	100% {
+    	transform: translateX(100%);
+  	}
+}

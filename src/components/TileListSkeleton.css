@@ -1,0 +1,25 @@
+.tlistske {
+	display: flex;
+	position: relative;
+}
+.tlistske:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .2), transparent);
+    animation: loading 1.5s infinite;
+}
+.tlistske__tile {
+	border-radius: 7px;
+	margin-right: 10px;
+	width: calc(20% - 10px);
+	height: 200px;
+	background-color: #222;
+}
+.tlistske__tile:last-child {
+	margin-right: 0;
+}

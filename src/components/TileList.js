@@ -1,8 +1,12 @@
 import React from 'react'
 import './TileList.css'
 import Tile from './Tile.js'
+import TileListSkeleton from './TileListSkeleton.js'
 
-function TileList({data, title}) {
+function TileList({data, title, isLoading}) {
+
+	if (isLoading) return <TileListSkeleton/>
+
     return (
     	<div className="tlist">
     		<h3 className="tlist__title">{title}</h3>

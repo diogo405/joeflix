@@ -9,7 +9,7 @@ function Hero({data, isLoading, list}) {
     			<p className="hero__desc">{data ? data.tagline : ''}</p>
     			<div className="hero__btns">
     				<button className="hero__btn hero__btn--play">
-    					<img className="hero__icon hero__icon--play" src={require('../images/streamline-icon-controls-play@15x15.png')}/>
+    					<img className="hero__icon hero__icon--play" src={require('../images/streamline-icon-controls-play@15x15.png')} alt=""/>
     					Play
     				</button>
     				<button className="hero__btn hero__btn--moreinfo">
