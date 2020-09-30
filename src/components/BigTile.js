@@ -3,7 +3,7 @@ import './BigTile.css'
 
 function BigTile({data, isLoading}) {
 
-	if (isLoading) return <div></div>
+	if (isLoading) return <div className="btile__loading"></div>
 
     return (
         <div className="btile">
