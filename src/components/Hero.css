@@ -34,42 +34,6 @@
 	text-shadow: 1px 1px black;
 	margin-top: 10px;
 }
-.hero__btns {
-	display: flex;
-	margin-top: 30px;
-}
-.hero__btn {
-	border-radius: 7px;
-	padding: 10px 30px;
-	border: none;
-	font-size: 18px;
-	min-width: 130px;
-	display: flex;
-    align-items: center;
-    color: black;
-}
-.hero__btn:hover {
-	opacity: 0.9;
-}
-.hero__btn:nth-child(2) {
-	margin-left: 20px;
-}
-.hero__btn--play {
-	background-color: white;
-}
-.hero__btn--moreinfo {
-	background-color: grey;
-	color: white;
-}
-.hero__icon {
-	margin-right: 7px;
-}
-.hero__icon--info {
-
-}
-.hero__icon--play {
-
-}
 .hero__list {
 	position: absolute;
 	bottom: 10px;

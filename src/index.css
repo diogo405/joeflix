@@ -4,6 +4,43 @@ body {
 	background-color: black;
 }
 
+.btns {
+	display: flex;
+	margin-top: 30px;
+}
+.btn {
+	border-radius: 7px;
+	padding: 10px 30px;
+	border: none;
+	font-size: 18px;
+	min-width: 130px;
+	display: flex;
+    align-items: center;
+    color: black;
+}
+.btn:hover {
+	opacity: 0.9;
+}
+.btn:nth-child(2) {
+	margin-left: 20px;
+}
+.btn--play {
+	background-color: white;
+}
+.btn--moreinfo {
+	background-color: grey;
+	color: white;
+}
+.btn__icon {
+	margin-right: 7px;
+}
+.btn__icon--info {
+
+}
+.btn__icon--play {
+
+}
+
 @keyframes loading {
 	100% {
     	transform: translateX(100%);
