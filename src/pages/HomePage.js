@@ -1,11 +1,11 @@
-import React from 'react'
+import React, {Suspense} from 'react'
 import {useQuery} from 'react-query'
 import './HomePage.css'
 import Hero from '../components/Hero.js'
 import TileList from '../components/TileList.js'
-import BigTile from '../components/BigTile.js'
 import feedbackState from '../atoms/feedbackState.js'
 import {useSetRecoilState} from 'recoil'
+const BigTile = React.lazy(() => import('../components/BigTile.js'));
 
 function HomePage() {
 	const setFeedback = useSetRecoilState(feedbackState)
@@ -34,8 +34,13 @@ function HomePage() {
 		const data = await res.json()
 		return data
 	})
+	const {data: nowData, isLoading: nowIsLoading, error: nowError} = useQuery('now', async () => {
+		const res = await fetch(`${process.env.REACT_APP_TMDB_BASE_URL}/movie/now_playing?api_key=${process.env.REACT_APP_TMDB_KEY}`)
+		const data = await res.json()
+		return data.results.splice(0, 5)
+	})
 	
-	if (heroError || popularError || trendingMoviesError || topRatedError || bigError) {
+	if (heroError || popularError || trendingMoviesError || topRatedError || bigError || nowError) {
 		setFeedback({isVisible: true, message: 'Oops, something went wrong'})
 	}
 
@@ -44,13 +49,18 @@ function HomePage() {
     return (
         <div className="home">
         	<Hero data={heroData} isLoading={heroIsLoading} list={mostPopular}/>
-        	<div className="home__list">
+        	<div className="home__list" fallback={<div></div>}>
         		<TileList title="Trending now" data={trendingMoviesData} isLoading={trendingMoviesIsLoading}/>
         	</div>
         	<div className="home__list home__list--grey">
         		<TileList title="Top rated" data={topRatedData} isLoading={topRatedIsLoading}/>
         	</div>
-        	<BigTile data={bigData} isLoading={bigIsLoading}/>
+        	<Suspense fallback={<div></div>}>
+        		<BigTile data={bigData} isLoading={bigIsLoading}/>
+        	</Suspense>
+        	<div className="home__list home__list--tall">
+        		<TileList title="New releases" data={nowData} isLoading={nowIsLoading}/>
+        	</div>
         </div>
     )
 }

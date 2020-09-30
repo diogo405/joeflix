@@ -5,3 +5,6 @@
 .home__list--grey {
 	background-color: #111;
 }
+.home__list--tall .tile {
+	height: 300px;
+}

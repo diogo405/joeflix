@@ -4,7 +4,7 @@ import Tile from './Tile.js'
 import TileListSkeleton from './TileListSkeleton.js'
 
 function TileList({data, title, isLoading}) {
-	console.log('data', data)
+
 	if (isLoading) return <TileListSkeleton/>
 
     return (

@@ -1,5 +1,6 @@
 .tile {
 	background-position: center center;
+	background-size: cover;
 	border-radius: 7px;
 	margin-right: 10px;
 	width: calc(20% - 10px);
