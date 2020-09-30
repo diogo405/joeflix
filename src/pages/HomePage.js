@@ -3,6 +3,7 @@ import {useQuery} from 'react-query'
 import './HomePage.css'
 import Hero from '../components/Hero.js'
 import TileList from '../components/TileList.js'
+import BigTile from '../components/BigTile.js'
 import feedbackState from '../atoms/feedbackState.js'
 import {useSetRecoilState} from 'recoil'
 
@@ -28,8 +29,13 @@ function HomePage() {
 		const data = await res.json()
 		return data.results.splice(0, 5)
 	})
+	const {data: bigData, isLoading: bigIsLoading, error: bigError} = useQuery('big', async () => {
+		const res = await fetch(`${process.env.REACT_APP_TMDB_BASE_URL}/movie/550?api_key=${process.env.REACT_APP_TMDB_KEY}`)
+		const data = await res.json()
+		return data
+	})
 	
-	if (heroError || popularError || trendingMoviesError || topRatedError) {
+	if (heroError || popularError || trendingMoviesError || topRatedError || bigError) {
 		setFeedback({isVisible: true, message: 'Oops, something went wrong'})
 	}
 
@@ -44,6 +50,7 @@ function HomePage() {
         	<div className="home__list home__list--grey">
         		<TileList title="Top rated" data={topRatedData} isLoading={topRatedIsLoading}/>
         	</div>
+        	<BigTile data={bigData} isLoading={bigIsLoading}/>
         </div>
     )
 }

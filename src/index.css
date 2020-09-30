@@ -17,6 +17,7 @@ body {
 	display: flex;
     align-items: center;
     color: black;
+    justify-content: center;
 }
 .btn:hover {
 	opacity: 0.9;
