@@ -8,3 +8,11 @@
 .tile:last-child {
 	margin-right: 0;
 }
+@media (max-width: 768px) {
+	.tile {
+		width: calc(100%/3 - 10px);
+	}
+	.tile:nth-child(4), .tile:nth-child(5) {
+		display: none;
+	}
+}
