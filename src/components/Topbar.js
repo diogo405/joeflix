@@ -35,9 +35,11 @@ function Topbar() {
         		<li className="topbar__item">
         			<img className="topbar__icon" src={require('../images/streamline-icon-search-1@15x15.png')} alt=""/>
         		</li>
+                {/*
         		<li className="topbar__item">
         			<img className="topbar__icon" src={require('../images/streamline-icon-messages-bubble-alternate@15x15.png')} alt=""/>
         		</li>
+                */}
         		<li className="topbar__item">
         			<div className="topbar__acc">
         				<div className="topbar__face topbar__face-leye"></div>

@@ -20,7 +20,7 @@
 }
 .hero__info {
 	position: absolute;
-	top: 50%;
+	top: 45%;
 	transform: translateY(-50%);
 	left: 40px;
 }
@@ -43,4 +43,10 @@
 /* Override */
 .hero .tile {
 	height: 150px;
+}
+
+@media (max-width: 768px) {
+	.hero__info {
+		left: 20px;
+	}
 }
