@@ -10,7 +10,7 @@ function BigTile({data, isLoading}) {
         <div className="btile">
         	<div className="btile__bg" style={{backgroundImage: `url(${process.env.REACT_APP_TMDB_IMG_URL}/w500${data.backdrop_path})`}}></div> 
         	<div className="btile__cont"> 
-        		<img className="btile__image" src={`${process.env.REACT_APP_TMDB_IMG_URL}/w500${data.backdrop_path}`}/>
+        		<img className="btile__image" src={`${process.env.REACT_APP_TMDB_IMG_URL}/w500${data.backdrop_path}`} alt=""/>
         		<div className="btile__info">
         			<h3 className="btile__title">{data.title}</h3>
         			<div className="btns">

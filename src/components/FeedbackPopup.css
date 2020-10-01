@@ -6,6 +6,7 @@
     padding: 30px;
     background: rgba(0,0,0,0.7);
     display: none;
+    z-index: 1;
 }
 .fbp--visible {
 	display: block;
