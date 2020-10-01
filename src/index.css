@@ -10,7 +10,7 @@ body {
 
 .btns {
 	display: flex;
-	margin-top: 30px;
+	margin-top: 20px;
 }
 .btn {
 	border-radius: 7px;
