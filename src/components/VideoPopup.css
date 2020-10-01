@@ -1,0 +1,48 @@
+.vpp {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+}
+.vpp--active {
+    display: block;
+}
+.vpp__bg {
+	width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+}
+.vpp__cont {
+	background-color: black;
+	box-shadow: 0 1px 10px -1px rgba(0,0,0,0.9);
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    z-index: 1;
+    max-width: 600px;
+    width: 100%;
+    max-height: 400px;
+    height: 100%;
+    border-radius: 7px;
+}
+.vpp__video {
+	width: 100%;
+    height: 100%;
+    margin-top: 20px;
+}
+.vpp__close {
+	color: white;
+	font-size: 26px;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 20px;
+}

@@ -4,6 +4,7 @@ import './App.css'
 import HomePage from './pages/HomePage.js'
 import Topbar from './components/Topbar.js'
 import FeedbackPopup from './components/FeedbackPopup.js'
+import VideoPopup from './components/VideoPopup.js'
 import {RecoilRoot} from 'recoil'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
             <Router>
             	<Topbar/>
                 <FeedbackPopup/>
+                <VideoPopup/>
                 <Switch>
                     <Route exact path="/">
                         <HomePage/>

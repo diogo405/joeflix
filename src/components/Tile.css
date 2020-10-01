@@ -5,10 +5,58 @@
 	margin-right: 10px;
 	width: calc(20% - 10px);
 	height: 200px;
+	transition: all 350ms ease;
+	position: relative;
+	overflow: hidden;
+}
+.tile:hover {
+	filter: brightness(0.8);
 }
 .tile:last-child {
 	margin-right: 0;
 }
+.tile__cont {
+	background-color: rgba(0,0,0,0.8);
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    height: 45px;
+    transform: translateY(45px);
+    transition: all 350ms ease-out;
+}
+.tile:hover .tile__cont {
+	transform: translateY(0);
+}
+.tile__title {
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.tile__title:hover {
+	text-decoration: underline;
+}
+.tile__play {
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+	background-color: white;
+	border: none;
+	margin-left: 10px;
+}
+.tile__icon {
+	width: 10px;
+    height: 10px;
+    margin-left: 1px;
+}
+
 @media (max-width: 768px) {
 	.tile {
 		width: calc(100%/3 - 10px);
