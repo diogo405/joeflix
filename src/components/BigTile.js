@@ -1,5 +1,6 @@
 import React from 'react'
 import './BigTile.css'
+import {Link} from 'react-router-dom'
 
 function BigTile({data, isLoading}) {
 
@@ -13,10 +14,10 @@ function BigTile({data, isLoading}) {
         		<div className="btile__info">
         			<h3 className="btile__title">{data.title}</h3>
         			<div className="btns">
-	    				<button className="btn btn--play">
+	    				<Link to={`/playing/${data ? data.id : ''}`} className="btn btn--play">
 	    					<img className="btn__icon btn__icon--play" src={require('../images/streamline-icon-controls-play@15x15.png')} alt=""/>
 	    					Play
-	    				</button>
+	    				</Link>
 	    				<button className="btn btn--moreinfo">
 	    					<span className="btn__icon btn__icon--info">ⓘ</span>
 	    					More info

@@ -83,6 +83,9 @@
 }
 
 @media (max-width: 768px) {
+    .topbar {
+        padding: 20px 20px;
+    }
 	.topbar__item--menu {
 		display: block;
 	}

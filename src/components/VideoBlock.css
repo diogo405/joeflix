@@ -1,0 +1,63 @@
+.vblock {
+	position: relative;
+}
+.vblock__bg {
+	height: 100vh;
+	background-color: black;
+	background-position: center center;
+	background-size: cover;
+}
+.vblock__bover {
+	background: linear-gradient(180deg, rgba(0,0,0,0) 80%, rgba(0,0,0,1) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.vblock__tover {
+	background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 15%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.vblock__close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 20px;
+	color: white;
+	font-size: 40px;
+	text-decoration: none;
+	text-shadow: 1px 1px black;
+}
+.vblock__playing {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	color: white;
+	font-size: 16px;
+	text-shadow: 1px 1px black;
+	font-style: italic;
+}
+.vblock__title {
+	display: inline-block;
+	margin-left: 5px;
+	font-family: 'Bebas Neue', cursive;
+	font-size: 22px;
+	font-style: normal;
+}
+.vblock--loading {}
+.vblock--loading:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .2), transparent);
+    animation: loading 1.5s infinite;
+}

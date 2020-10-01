@@ -1,5 +1,6 @@
 import React from 'react'
 import './Hero.css'
+import {Link} from 'react-router-dom'
 
 function Hero({data, isLoading, list}) {
     return (
@@ -8,10 +9,10 @@ function Hero({data, isLoading, list}) {
     			<h2 className="hero__title">{data ? data.original_title : ''}</h2>
     			<p className="hero__desc">{data ? data.tagline : ''}</p>
     			<div className="btns">
-    				<button className="btn btn--play">
+    				<Link to={`/playing/${data ? data.id : ''}`} className="btn btn--play">
     					<img className="btn__icon btn__icon--play" src={require('../images/streamline-icon-controls-play@15x15.png')} alt=""/>
     					Play
-    				</button>
+    				</Link>
     				<button className="btn btn--moreinfo">
     					<span className="btn__icon btn__icon--info">ⓘ</span>
     					More info

@@ -36,6 +36,7 @@
 	transform: translateY(0);
 }
 .tile__title {
+	color: white;
 	font-size: 12px;
 	font-weight: bold;
 	cursor: pointer;

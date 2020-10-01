@@ -1,24 +1,28 @@
-import React from 'react'
+import React, {Suspense} from 'react'
 import {HashRouter as Router, Switch, Route} from 'react-router-dom'
 import './App.css'
-import HomePage from './pages/HomePage.js'
 import Topbar from './components/Topbar.js'
 import FeedbackPopup from './components/FeedbackPopup.js'
-import VideoPopup from './components/VideoPopup.js'
 import {RecoilRoot} from 'recoil'
+const HomePage = React.lazy(() => import('./pages/HomePage.js'));
+const VideoPage = React.lazy(() => import('./pages/VideoPage.js'));
 
 function App() {
     return (
         <RecoilRoot>
             <Router>
-            	<Topbar/>
                 <FeedbackPopup/>
-                <VideoPopup/>
-                <Switch>
-                    <Route exact path="/">
-                        <HomePage/>
-                    </Route>
-                </Switch>
+                <Suspense fallback={<div></div>}>
+                    <Switch>
+                        <Route exact path="/">
+                        	<Topbar/>
+                            <HomePage/>
+                        </Route>
+                        <Route path="/playing/:id">
+                            <VideoPage/>
+                        </Route>
+                    </Switch>
+                </Suspense>
             </Router>
         </RecoilRoot>
     )

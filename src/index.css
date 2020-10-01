@@ -14,14 +14,15 @@ body {
 }
 .btn {
 	border-radius: 7px;
-	padding: 10px 30px;
-	border: none;
-	font-size: 18px;
-	min-width: 130px;
-	display: flex;
+    padding: 10px 20px;
+    border: none;
+    font-size: 18px;
+    min-width: 100px;
+    display: flex;
     align-items: center;
     color: black;
     justify-content: center;
+    text-decoration: none;
 }
 .btn:hover {
 	opacity: 0.9;
