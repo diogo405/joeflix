@@ -38,7 +38,7 @@
 	position: absolute;
 	bottom: 10px;
 	left: 10px;
-	width: 100%;
+	width: calc(100% - 10px);
 }
 /* Override */
 .hero .tile {
