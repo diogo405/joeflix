@@ -10,7 +10,7 @@ import Converter from '../components/Converter.js'
 function ShowsPage() {
 	const setFeedback = useSetRecoilState(feedbackState)
 	const {data: heroData, isLoading: heroIsLoading, error: heroError} = useQuery('heroShow', async () => {
-		const response = await fetch(`${process.env.REACT_APP_TMDB_BASE_URL}/tv/688?api_key=${process.env.REACT_APP_TMDB_KEY}`)
+		const response = await fetch(`${process.env.REACT_APP_TMDB_BASE_URL}/tv/695?api_key=${process.env.REACT_APP_TMDB_KEY}`)
 		const data = await response.json()
 		return Converter.convertToTile('tv', data)
 	})
@@ -19,13 +19,13 @@ function ShowsPage() {
 		const data = await res.json()
 		return Converter.convertShowsToTiles(data.results.splice(0, 5))
 	})
-	const {data: topData, isLoading: topIsLoading, error: topError} = useQuery('topShow', async () => {
-		const res = await fetch(`${process.env.REACT_APP_TMDB_BASE_URL}/tv/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}`)
+	const {data: onData, isLoading: onIsLoading, error: onError} = useQuery('onShow', async () => {
+		const res = await fetch(`${process.env.REACT_APP_TMDB_BASE_URL}/tv/on_the_air?api_key=${process.env.REACT_APP_TMDB_KEY}`)
 		const data = await res.json()
 		return Converter.convertShowsToTiles(data.results.splice(0, 5))
 	})
 
-	if (heroError || popularError || topError) {
+	if (heroError || popularError || onError) {
 		setFeedback({isVisible: true, message: 'Oops, something went wrong'})
 	}
 
@@ -34,7 +34,7 @@ function ShowsPage() {
         <div className="showsp">
         	<Hero data={heroData} isLoading={heroIsLoading} list={mostPopular}/>
         	<div className="tlist__wrapper tlist__wrapper--tall" fallback={<div></div>}>
-        		<TileList title="Top rated" data={topData} isLoading={topIsLoading}/>
+        		<TileList title="On air" data={onData} isLoading={onIsLoading}/>
         	</div>
         </div>
     )
