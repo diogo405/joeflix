@@ -10,7 +10,7 @@ import Converter from '../components/Converter.js'
 function ShowsPage() {
 	const setFeedback = useSetRecoilState(feedbackState)
 	const {data: heroData, isLoading: heroIsLoading, error: heroError} = useQuery('heroShow', async () => {
-		const response = await fetch(`${process.env.REACT_APP_TMDB_BASE_URL}/tv/695?api_key=${process.env.REACT_APP_TMDB_KEY}`)
+		const response = await fetch(`${process.env.REACT_APP_TMDB_BASE_URL}/tv/713?api_key=${process.env.REACT_APP_TMDB_KEY}`)
 		const data = await response.json()
 		return Converter.convertToTile('tv', data)
 	})

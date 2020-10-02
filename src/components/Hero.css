@@ -34,7 +34,7 @@
 .hero__desc {
 	text-shadow: 1px 1px black;
 	margin-top: 10px;
-    margin-right: 40px;
+    width: calc(100% - 40px);
 }
 .hero__list {
 	position: absolute;
@@ -50,5 +50,8 @@
 @media (max-width: 768px) {
 	.hero__info {
 		left: 20px;
+	}
+	.hero__title {
+	    font-size: 60px;
 	}
 }
