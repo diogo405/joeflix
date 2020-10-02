@@ -8,13 +8,13 @@ function BigTile({data, isLoading}) {
 
     return (
         <div className="btile">
-        	<div className="btile__bg" style={{backgroundImage: `url(${process.env.REACT_APP_TMDB_IMG_URL}/w500${data.backdrop_path})`}}></div> 
+        	<div className="btile__bg" style={{backgroundImage: `url(${process.env.REACT_APP_TMDB_IMG_URL}/w500${data.banner})`}}></div> 
         	<div className="btile__cont"> 
-        		<img className="btile__image" src={`${process.env.REACT_APP_TMDB_IMG_URL}/w500${data.backdrop_path}`} alt=""/>
+        		<img className="btile__image" src={`${process.env.REACT_APP_TMDB_IMG_URL}/w500${data.banner}`} alt=""/>
         		<div className="btile__info">
         			<h3 className="btile__title">{data.title}</h3>
         			<div className="btns">
-	    				<Link to={`/playing/${data ? data.id : ''}`} className="btn btn--play">
+	    				<Link to={`/playing/${data? data.type : ''}/${data ? data.id : ''}`} className="btn btn--play">
 	    					<img className="btn__icon btn__icon--play" src={require('../images/streamline-icon-controls-play@15x15.png')} alt=""/>
 	    					Play
 	    				</Link>

@@ -27,18 +27,19 @@ function Topbar() {
                         <h1>JOEFLIX</h1>
                     </Link>
                 </li>
-        		<li className="topbar__item topbar__item--menu">
-        			Browse
-        		</li>
         		<li className="topbar__item">
                     <NavLink exact to="/">Home</NavLink>
                 </li>
         		<li className="topbar__item">
                     <NavLink to="/tv-shows">TV Shows</NavLink>
                 </li>
-        		<li className="topbar__item">Movies</li>
+        		<li className="topbar__item">
+                    <NavLink to="/movies">Movies</NavLink>
+                </li>
+                {/*
         		<li className="topbar__item">Latest</li>
         		<li className="topbar__item">My List</li>
+                */}
         	</ul>
         	<ul className="topbar__cont">
         		<li className="topbar__item">

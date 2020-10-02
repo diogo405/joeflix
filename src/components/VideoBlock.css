@@ -32,6 +32,7 @@
 	font-size: 40px;
 	text-decoration: none;
 	text-shadow: 1px 1px black;
+	cursor: pointer;
 }
 .vblock__playing {
 	position: absolute;

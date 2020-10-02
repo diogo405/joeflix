@@ -28,20 +28,6 @@
 .topbar__item .active {
 	font-weight: bold;
 }
-.topbar__item--menu {
-    display: none;
-}
-.topbar__item--menu:after {
-	border: solid white;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
-    transform: rotate(45deg);
-    content: '';
-    margin-left: 6px;
-    top: -1px;
-    position: relative;
-}
 .topbar__item--logo {
 	font-family: 'Bebas Neue', cursive;
 	color: var(--red);
@@ -90,14 +76,16 @@
     left: 13px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
     .topbar {
         padding: 20px 20px;
     }
-	.topbar__item--menu {
-		display: block;
-	}
-	.topbar__cont:first-child .topbar__item:not(.topbar__item--menu):not(.topbar__item--logo) {
-		display: none;
-	}
+    .topbar__item {
+        margin-right: 10px;
+        font-size: 12px;
+    }
+    .topbar__item--logo {
+        margin-right: 10px;
+        font-size: 26px;
+    }
 }

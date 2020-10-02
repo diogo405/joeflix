@@ -7,6 +7,7 @@ import {RecoilRoot} from 'recoil'
 const HomePage = React.lazy(() => import('./pages/HomePage.js'));
 const VideoPage = React.lazy(() => import('./pages/VideoPage.js'));
 const ShowsPage = React.lazy(() => import('./pages/ShowsPage.js'));
+const MoviesPage = React.lazy(() => import('./pages/MoviesPage.js'));
 
 function App() {
     return (
@@ -19,12 +20,16 @@ function App() {
                         	<Topbar/>
                             <HomePage/>
                         </Route>
-                        <Route path="/playing/:id">
+                        <Route path="/playing/:type/:id">
                             <VideoPage/>
                         </Route>
                         <Route path="/tv-shows">
                             <Topbar/>
                             <ShowsPage/>
+                        </Route>
+                        <Route path="/movies">
+                            <Topbar/>
+                            <MoviesPage/>
                         </Route>
                     </Switch>
                 </Suspense>

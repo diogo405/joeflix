@@ -29,10 +29,12 @@
     letter-spacing: 7px;
     font-size: 100px;
     text-shadow: 1px 1px black;
+    margin-right: 40px;
 }
 .hero__desc {
 	text-shadow: 1px 1px black;
 	margin-top: 10px;
+    margin-right: 40px;
 }
 .hero__list {
 	position: absolute;
