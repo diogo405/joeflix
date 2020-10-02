@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './Topbar.css'
+import {Link, NavLink} from 'react-router-dom'
 
 function Topbar() {
     const [scroll, setScroll] = useState(false)
@@ -21,12 +22,20 @@ function Topbar() {
     return (
         <nav className={`topbar ${scroll ? 'topbar--scroll' : ''}`}>
         	<ul className="topbar__cont">
-        		<li className="topbar__item topbar__item--logo"><h1>JOEFLIX</h1></li>
+        		<li className="topbar__item topbar__item--logo">
+                    <Link to="/">
+                        <h1>JOEFLIX</h1>
+                    </Link>
+                </li>
         		<li className="topbar__item topbar__item--menu">
         			Browse
         		</li>
-        		<li className="topbar__item topbar__item--active">Home</li>
-        		<li className="topbar__item">TV Shows</li>
+        		<li className="topbar__item">
+                    <NavLink exact to="/">Home</NavLink>
+                </li>
+        		<li className="topbar__item">
+                    <NavLink to="/tv-shows">TV Shows</NavLink>
+                </li>
         		<li className="topbar__item">Movies</li>
         		<li className="topbar__item">Latest</li>
         		<li className="topbar__item">My List</li>

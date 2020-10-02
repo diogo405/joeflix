@@ -21,7 +21,11 @@
 .topbar__item {
 	margin-right: 20px;
 }
-.topbar__item--active {
+.topbar__item a {
+    color: white;
+    text-decoration: none;
+}
+.topbar__item .active {
 	font-weight: bold;
 }
 .topbar__item--menu {
@@ -45,6 +49,10 @@
 	margin-right: 40px;
     text-shadow: 2px 2px black;
     letter-spacing: 4px;
+}
+.topbar__item--logo a {
+    color: var(--red);
+    text-decoration: none;
 }
 .topbar__icon {
 	filter: invert(1);

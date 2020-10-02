@@ -6,6 +6,7 @@ import FeedbackPopup from './components/FeedbackPopup.js'
 import {RecoilRoot} from 'recoil'
 const HomePage = React.lazy(() => import('./pages/HomePage.js'));
 const VideoPage = React.lazy(() => import('./pages/VideoPage.js'));
+const ShowsPage = React.lazy(() => import('./pages/ShowsPage.js'));
 
 function App() {
     return (
@@ -20,6 +21,10 @@ function App() {
                         </Route>
                         <Route path="/playing/:id">
                             <VideoPage/>
+                        </Route>
+                        <Route path="/tv-shows">
+                            <Topbar/>
+                            <ShowsPage/>
                         </Route>
                     </Switch>
                 </Suspense>
